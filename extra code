@@ -1,0 +1,33 @@
+// function randomLowerCase(){
+//   const numberList = ("abcdefghijklmnopqrstuvwxyz");
+//   return numberList[Math.floor(Math.random()*numberList.length)];
+// };
+// function randomUpperCase(){
+//   const numberList = ("ABCDEFGHIJKLMNOPQRSUVWXYZ");
+//   return numberList[Math.floor(Math.random()*numberList.length)];
+// };
+// function randomSpecialSym(){
+//   const numberList = (",!@#$%^&*()");
+//   return numberList[Math.floor(Math.random()*numberList.length)];
+// };
+// function randomNumbers(){
+//   const numberList = ("0123456789");
+//   return numberList[Math.floor(Math.random()*numberList.length)];
+// }
+// console.log(randomNumbers());
+// console.log(randomUpperCase());
+// console.log(randomLowerCase());
+// console.log(randomSpecialSym());
+
+
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+
+// }
+
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
