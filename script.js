@@ -25,23 +25,6 @@ var userUpper=window.confirm("Do you want Uppercase letters in your password?")
 var userLower=window.confirm("Do you want lowercase letters in your password?")
 
 
-
-// function randomLowerCase(){
-//   const numberList = ("abcdefghijklmnopqrstuvwxyz");
-//   return numberList[Math.floor(Math.random()*numberList.length)];
-// };
-// function randomUpperCase(){
-//   const numberList = ("ABCDEFGHIJKLMNOPQRSUVWXYZ");
-//   return numberList[Math.floor(Math.random()*numberList.length)];
-// };
-// function randomSpecialSym(){
-//   const numberList = (",!@#$%^&*()");
-//   return numberList[Math.floor(Math.random()*numberList.length)];
-// };
-// function randomNumbers(){
-//   const numberList = ("0123456789");
-//   return numberList[Math.floor(Math.random()*numberList.length)];
-// };
 var upperList=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowerList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 var numberList = ["0","1","2","3","4","5","6","7","8","9"]
@@ -53,10 +36,10 @@ if (userUpper==true){
   optionsCart=optionsCart.concat(upperList);
 }
 if (userSymbols==true){
-  optionsCart=optionsCart.concat(numberList);
+  optionsCart=optionsCart.concat(symbolList);
 }
 if(userNumbers==true){
-  optionsCart=optionsCart.concat(symbolList);
+  optionsCart=optionsCart.concat(numberList);
 }
 if (userLower==true){
   optionsCart=optionsCart.concat(lowerList);
@@ -65,12 +48,11 @@ if(optionsCart.length===0){
   optionsCart.push(window.alert("NO OPTIONS WERE CHOSEN"))
 }
 
-var generatedPassword = "";
+var generatedPassword = [];
 
-while(userInput<optionsCart.length){
-  var random = Math.floor(Math.random()*optionsCart.length);
-  
-}
+for(var i=0;i<userInput;i++){
+var random=optionsCart[Math.floor(Math.random()*optionsCart.length)]
+generatedPassword+=random};
 
   return generatedPassword;
 
