@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword(){
 
   // Prompts the user to write what they want the password to be 
-  var userInput = window.prompt("How long do you want your password to be ?" + '\n' +"chose a number 8-128")
+  var inputUser = window.prompt("How long do you want your password to be ?" + '\n' +"chose a number 8-128")
 
-  var passwordLength = parseInt(userInput)
+  var passwordLength = parseInt(inputUser)
 
   if(isNaN(passwordLength)){
     window.alert("That is not a number")
@@ -19,39 +19,39 @@ function generatePassword(){
     window.alert("That number is either too big or too small")
     return
   }
-var userNumbers=window.confirm("Do you want numbers in your password?")
-var userSymbols=window.confirm("Do you want special characters in your password?")
-var userUpper=window.confirm("Do you want Uppercase letters in your password?")
-var userLower=window.confirm("Do you want lowercase letters in your password?")
+var numberUsers=window.confirm("Do you want numbers in your password?")
+var symbolsUsers=window.confirm("Do you want special characters in your password?")
+var upperUsers=window.confirm("Do you want Uppercase letters in your password?")
+var lowerUsers=window.confirm("Do you want lowercase letters in your password?")
 
 
-var upperList=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var lowerList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-var numberList = ["0","1","2","3","4","5","6","7","8","9"]
-var symbolList=["!","@","#","$","%","^","&","*","(",")"]
-var optionsCart=[]
+var uppercaseList=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var LowercaseList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var numbersList = ["0","1","2","3","4","5","6","7","8","9"]
+var SymbolsList=["!","@","#","$","%","^","&","*","(",")"]
+var userPassword=[]
 
 
-if (userUpper==true){
-  optionsCart=optionsCart.concat(upperList);
+if (upperUsers==true){
+  userPassword=userPassword.concat(uppercaseList);
 }
-if (userSymbols==true){
-  optionsCart=optionsCart.concat(symbolList);
+if (symbolsUsers==true){
+  userPassword=userPassword.concat(SymbolsList);
 }
-if(userNumbers==true){
-  optionsCart=optionsCart.concat(numberList);
+if(numberUsers==true){
+  userPassword=userPassword.concat(numbersList);
 }
-if (userLower==true){
-  optionsCart=optionsCart.concat(lowerList);
+if (lowerUsers==true){
+  userPassword=userPassword.concat(LowercaseList);
 }
-if(optionsCart.length===0){
-  optionsCart.push(window.alert("NO OPTIONS WERE CHOSEN"))
+if(userPassword.length===0){
+  userPassword.push(window.alert("NO OPTIONS WERE CHOSEN"))
 }
 
 var generatedPassword = [];
 
-for(var i=0;i<userInput;i++){
-var random=optionsCart[Math.floor(Math.random()*optionsCart.length)]
+for(var i=0;i<inputUser;i++){
+var random=userPassword[Math.floor(Math.random()*userPassword.length)]
 generatedPassword+=random};
 
   return generatedPassword;
