@@ -1,44 +1,67 @@
 
-// Assignment code here
-
-
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
 
-var uppercaseList=["A", "B", "C", "D","E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var LowercaseList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-var numbersList = ["0","1","2","3","4","5","6","7","8","9"]
-var SymbolsList=["!","@","#","$","%","^","&","*","(",")"]
+// variables for the options, you take away from the array
+var numbersQuestion;
+var symbolsQuestion;
+var upperQuestion;
+var lowerQuestion;
+
+
+
+function generatePassword(){
+
+
+// first user inputs
+var startQuestion=parseInt(window.prompt("choose a number between 8-128 for your password"))
+if (isNaN(startQuestion)||(startQuestion<8||startQuestion>128)){window.alert("This does not meet the requirements"); return}
+
+
+
+var numbersQuestion=window.confirm("do you want numbers in your password?")
+var symbolsQuestion=window.confirm("do you want symbols in your password?")
+var upperQuestion=window.confirm("do you want uppercase letters in your password?")
+var lowerQuestion=window.confirm("do you want lowercase letters in your password?")
+if(numbersQuestion===false,symbolsQuestion===false,lowerQuestion===false,upperQuestion===false){
+  window.alert("You must choose one for your password, try again")
+  return
+};
+var numbers = ["0","1","2","3","4","5","6","7","8","9"]
+var symbols=["!","@","#","$","%","^","&","*","(",")"]
+var upperCase=["A", "B", "C", "D","E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 var userPassword=[]
 
 
-function start(){
-var startQuestion=parseInt(window.prompt("choose a number between 8-128 for your password"))
-if (isNaN(startQuestion)){window.alert("this is not a number, try again")}
+if (numbersQuestion===true){
+  userPassword=userPassword.concat(numbers)
+}
+if (symbolsQuestion===true){
+  userPassword=userPassword.concat(symbols)
+}
+if (upperQuestion===true){
+  userPassword=userPassword.concat(upperCase)
+}
+if (lowerQuestion===true){
+  userPassword=userPassword.concat(lowerCase)
+}
 
-
-
-var numberUsers=window.confirm("Do you want numbers in your password?")
-var symbolsUsers=window.confirm("Do you want special characters in your password?")
-var upperUsers=window.confirm("Do you want Uppercase letters in your password?")
-var lowerUsers=window.confirm("Do you want lowercase letters in your password?")
+var newPassword=[]
+for (var i=0;i<startQuestion;i++){
+var random=userPassword[Math.floor(Math.random()*userPassword.length)]
+newPassword+=random}
+return newPassword;
 }
 
 
+// Add event listener to generate button
+
+// Add event listener to generate button
 
 
+generateBtn.addEventListener("click", writePassword);
 
-
-
-
-
-
-
-
-
-
-
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -46,7 +69,3 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-start();
