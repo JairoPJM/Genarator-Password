@@ -23,7 +23,7 @@ var numbersQuestion=window.confirm("do you want numbers in your password?")
 var symbolsQuestion=window.confirm("do you want symbols in your password?")
 var upperQuestion=window.confirm("do you want uppercase letters in your password?")
 var lowerQuestion=window.confirm("do you want lowercase letters in your password?")
-if(numbersQuestion===false,symbolsQuestion===false,lowerQuestion===false,upperQuestion===false){
+if(numbersQuestion+symbolsQuestion+upperQuestion+lowerQuestion==false){
   window.alert("You must choose one for your password, try again")
   return
 };
